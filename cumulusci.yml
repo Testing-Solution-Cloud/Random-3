@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: Random-3
+    package:
+        name: Random-3
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Random-3/tests
+            options:
+                outputdir: robot/Random-3/results
+
+    robot_testdoc:
+        options:
+            path: robot/Random-3/tests
+            output: robot/Random-3/doc/Random-3_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
